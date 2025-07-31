@@ -15,6 +15,7 @@ import StarterKit from "@tiptap/starter-kit";
 import FontFamily from "@tiptap/extension-font-family";
 import TextStyle from "@tiptap/extension-text-style";
 import { useEditorStore } from "@/app/store/use-editor-store";
+import Heading from "@tiptap/extension-heading";
 
 export const Editor = () => {
   const { setEditor } = useEditorStore();
@@ -51,8 +52,15 @@ export const Editor = () => {
           "focus:outline-none print:border-0 bg-white border border-[#C7C7C7] flex flex-col min-h-[1054px] w-[816px] pt-10 pr-14 pb-10 cursor-text",
       },
     },
+    immediatelyRender: false,
     extensions: [
-      StarterKit,
+      StarterKit.configure({
+        heading: false, // disable the built-in heading extension
+      }),
+      Heading.configure({
+        levels: [1, 2, 3, 4, 5, 6], // enable all heading levels
+      }),
+
       FontFamily,
       TextStyle,
       Table,
