@@ -26,6 +26,8 @@ import {
 import React from "react";
 import { type Level } from "@tiptap/extension-heading";
 
+import { Button } from "@/components/ui/button";
+
 const HeadingLevelButton = () => {
   const { editor } = useEditorStore();
 
@@ -249,6 +251,8 @@ export const Toolbar = () => {
       ))}
       <Separator orientation="vertical" className="min-h-6 bg-neutral-300" />
       <FontFamilyButton />
+      <Button className="bg-amber-400"/>
+      <Button className="bg-amber-600"/>
       <Separator orientation="vertical" className="min-h-6 bg-neutral-300" />
       <HeadingLevelButton/>
       <Separator orientation="vertical" className="min-h-6 bg-neutral-300" />
